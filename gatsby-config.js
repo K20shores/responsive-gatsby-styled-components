@@ -7,6 +7,7 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
-module.exports = {
-  plugins: [],
+ module.exports = {
+  plugins: [`gatsby-plugin-styled-components`],
 }
+
