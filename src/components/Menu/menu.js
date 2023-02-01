@@ -1,6 +1,8 @@
-import React from 'react';
-import { bool } from 'prop-types';
-import { StyledMenu } from './menu.styled';
+import React, { useState, useRef } from 'react';
+import { StyledMenu, MainNav, NavLi } from './menu.styled';
+import { Link } from 'gatsby'
+import { Burger } from '../'
+import { useOnClickOutside } from '../../hooks';
 
 let locations = [
   {
@@ -19,37 +21,48 @@ let locations = [
     title: "About Us"
   },
   {
-    url: "/",
+    url: "/404",
     icon: "📩",
-    title: "Contact"
+    title: "404"
   },
 ]
 
 const MenuItems = (props) => {
   return (
     locations.map((location, index) => (
-      <a href={location.url} tabIndex={props.tabIndex} key={index}>
-        <span aria-hidden="true">{location.icon}</span>
-        {location.title}
-      </a>
+      <NavLi key={index}>
+        <Link to={location.url} tabIndex={props.tabIndex}>
+          <span aria-hidden="true">{location.icon}</span>
+          {location.title}
+        </Link>
+      </NavLi>
     ))
   )
 }
 
-const Menu = ({ open, ...props }) => {
+const Menu = () => {
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const menuId = "main-menu";
+  useOnClickOutside(node, () => setOpen(false));
   
   const isHidden = open ? true : false;
   const tabIndex = isHidden ? 0 : -1;
 
   return (
-    <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
-      <MenuItems tabIndex={tabIndex}/>
+    <StyledMenu ref={node}>
+      <Link to='/'>
+        Logo
+      </Link>
+      <MainNav open={open}>
+        <MenuItems tabIndex={tabIndex}/>
+      </MainNav>
+      <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
     </StyledMenu>
   )
 }
 
 Menu.propTypes = {
-  open: bool.isRequired,
 }
 
 export default Menu;

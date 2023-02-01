@@ -1,15 +1,14 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from './global';
 
 const theme = {
-  // https://coolors.co/95a3a4-14591d-0a0908-ff6663-3d3b8e
+  // https://coolors.co/00ad43-cacfd6-2f2504-594e36-29339b
   colors: {
-    grey: "#95a3a4ff", // cadet grey
-    green: "#14591dff", // lincon green
-    black: "#0a0908ff", // rich black fogra
-    red: "#ff6663ff", // bittersweet
-    blue: "#3d3b8eff", // dark slate blue
+    green:"#00ad43", // Green Pantone
+    grey :"#00000055", // Light Slate Gray
   },
+  transitionSpeed: 0.4,
   fonts: ["sans-serif", "Roboto"],
   fontSizes: {
     small: "1em",
@@ -23,8 +22,15 @@ const theme = {
   }
 };
 
-const Theme = ({ children }) => (
-  <ThemeProvider theme={theme}>{children}</ThemeProvider>
-);
+const Theme = ({ children }) => {
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+      <GlobalStyles />
+        {children}
+      </ThemeProvider>
+    </>
+  )
+}
 
 export default Theme;

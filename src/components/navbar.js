@@ -16,26 +16,6 @@ const Bar = styled.nav`
     align-items: center;
   }
 `
-const MainNav = styled.ul`
-  list-style-type: none;
-  display: ${ props => props.display };
-  flex-direction: column;
-  @media (min-width: 768px) {
-    display: flex !important;
-    margin-right: 30px;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-`
-const NavLi = styled.li`
-  text-align: end;
-` 
-const NavLink = styled.a`
-  list-style-type: none;
-  @media (min-width: 768px) {    
-    margin: 0px 10px;
-  }
-`
 const Logo  = styled(NavLink)`
   display: inline-block;
   font-size: 22px;

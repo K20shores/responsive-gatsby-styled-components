@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
-  // @media (min-width: 768px) {
-  //   display: none;
-  // }
-  position: absolute;
-  top: 5%;
-  right: 2rem;
   display: flex;
+  transition: all ${({ theme }) => theme.transitionSpeed}s linear;
+  @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: none;
+  }
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
@@ -22,7 +20,7 @@ export const StyledBurger = styled.button`
     height: 0.25rem;
     background: ${({ theme, open }) => open ? theme.colors.green : theme.colors.grey};
     border-radius: 10px;
-    transition: all 0.3s linear;
+    transition: all ${({ theme }) => theme.transitionSpeed}s linear;
     position: relative;
     transform-origin: 1px;
     :first-child {
