@@ -7,23 +7,15 @@ import { useOnClickOutside } from '../../hooks';
 let locations = [
   {
     url: "/",
-    icon: "💁🏻‍",
-    title: "About Us"
+    title: "About"
   },
   {
     url: "/",
-    icon: "💸",
-    title: "Pricing"
+    title: "Store"
   },
   {
     url: "/",
-    icon: "📩",
-    title: "About Us"
-  },
-  {
-    url: "/404",
-    icon: "📩",
-    title: "404"
+    title: "Blog"
   },
 ]
 

@@ -5,7 +5,8 @@ const StyledMenu = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   padding: 5px;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 
   a {
     font-size: 1.5rem;
@@ -54,9 +55,12 @@ const NavLi = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-right: 1em;
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     text-align: center;
     margin: 0;
+    padding: 0;
   }
 ` 
 

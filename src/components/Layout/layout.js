@@ -6,7 +6,7 @@ import { StyledLayout, StyledContent } from './layout.styled';
 const Layout = ({ children }) => {
   
   return (
-    <Theme thing={true}>
+    <Theme>
       <StyledLayout>
         <Menu/>
         <StyledContent>

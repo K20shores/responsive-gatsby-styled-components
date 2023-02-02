@@ -6,7 +6,15 @@ const theme = {
   // https://coolors.co/00ad43-cacfd6-2f2504-594e36-29339b
   colors: {
     green:"#00ad43", // Green Pantone
-    grey :"#00000055", // Light Slate Gray
+    grey :"#00000033", // Light Slate Gray
+    complementary1: "#0FFF6C",
+    complementary2: "#00DB55",
+    complementary3: "#AD005C",
+    complementary4: "#DB0075",
+    tetrad1: "#AD006B",
+    tetrad2: "#4200AD",
+    tetrad3: "#05FF66",
+    tetrad4: "#AD4200",
   },
   transitionSpeed: 0.4,
   fonts: ["sans-serif", "Roboto"],

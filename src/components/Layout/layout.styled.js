@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledLayout = styled.div`
+const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -8,9 +8,13 @@ export const StyledLayout = styled.div`
 }
 `;
 
-export const StyledContent = styled.div`
+const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: green;
 `;
+
+export {
+  StyledContent,
+  StyledLayout
+}
