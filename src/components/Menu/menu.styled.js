@@ -5,7 +5,7 @@ const StyledMenu = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   padding: 5px;
-  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   z-index: 100;
 
   a {
@@ -24,20 +24,27 @@ const StyledMenu = styled.nav`
 
 const MainNav = styled.ul`
   list-style-type: none;
-  display: flex;
+  display: none;
+  ${({ open }) => open && `
+    display: flex;
+  `}
   margin: 0;
   padding: 0;
+  width: 100%;
 
   transition: transform ${({ theme }) => theme.transitionSpeed}s linear;
-
+  
+  @media(min-width: ${({ theme }) => theme.breakpoints.mobile }) {
+    width: 50%;
+  }
+  
   @media (min-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    display: flex;
     a {
-      font-size: 1rem;
+     font-size: 1rem;
     }
   }
-
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    width: 50%;
     flex-direction: column;
     justify-content: center;
     background: ${({ theme }) => theme.colors.grey};
@@ -46,9 +53,6 @@ const MainNav = styled.ul`
     position: absolute;
     top: 0;
     right: 0;
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    width: 100%;
   }
 `
 const NavLi = styled.li`
@@ -62,7 +66,7 @@ const NavLi = styled.li`
     margin: 0;
     padding: 0;
   }
-` 
+`
 
 export {
   StyledMenu,
